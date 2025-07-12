@@ -50,6 +50,14 @@ const theme = createTheme({
         root: {
           borderRadius: '6px',
         },
+        containedPrimary: {
+          backgroundColor: '#1976d2',
+          color: '#ffffff',
+          '&:hover': {
+            backgroundColor: '#125ea4',
+            color: '#ffffff',
+          },
+        },
       },
     },
     MuiCard: {
