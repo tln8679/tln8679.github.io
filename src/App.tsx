@@ -1,13 +1,23 @@
-import NavBar from './components/NavBar';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
+import NavBar from "./components/NavBar";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import theme from "./theme";
 
 function App() {
   return (
     <>
-      <NavBar />
-      <main id="home"><Home /></main>
-      <main id="projects"><Projects /></main>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <NavBar />
+        <main id="home">
+          <Home />
+        </main>
+        <main id="projects">
+          <Projects />
+        </main>
+      </ThemeProvider>
     </>
   );
 }

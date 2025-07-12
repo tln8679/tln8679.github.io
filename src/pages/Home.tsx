@@ -5,7 +5,7 @@ export default function Home() {
     <Container sx={{ mt: 4, textAlign: 'center' }}>
       <Typography variant="h3" gutterBottom>Taylor Noble</Typography>
       <Typography variant="h6" gutterBottom>Web Developer</Typography>
-      <Box sx={{ mt: 2 }}>
+      <Box sx={{ animation: 'fadeIn 0.5s ease-in', mt: 2 }}>
         <Button
           variant="contained"
           href="https://www.linkedin.com/in/mrtaylornoble/"
