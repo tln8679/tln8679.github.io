@@ -1,5 +1,5 @@
 import NavBar from "./components/NavBar";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Projects from "./pages/Projects";
 
 import { ThemeProvider, CssBaseline } from "@mui/material";

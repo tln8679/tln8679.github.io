@@ -2,7 +2,7 @@ name: Deploy Vite to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [develop]  # ✅ Trigger deploy when pushing to develop
 
 jobs:
   deploy:
@@ -27,6 +27,6 @@ jobs:
       - name: 🚀 Deploy to GitHub Pages (main branch)
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: main
+          branch: main  # ✅ This is where the built site will be pushed
           folder: dist
           clean: true
