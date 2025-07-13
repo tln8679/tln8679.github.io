@@ -9,6 +9,11 @@ export default function Projects() {
       link: 'http://retrospectivehub.com/'
     },
     {
+      title: 'Furlancer',
+      description: 'A place to learn about cats and dogs.',
+      link: 'https://tln8679.github.io/furlancer/'
+    },
+    {
       title: 'React Calculator',
       description: 'A clean React‑TS calculator app.',
       link: 'https://tln8679.github.io/my-react-caclculator/'
