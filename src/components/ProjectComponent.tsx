@@ -8,13 +8,24 @@ interface ProjectProps {
 
 export function ProjectComponent({ title, description, link }: ProjectProps) {
   return (
-    <Card sx={{ maxWidth: 345, m: 2, flex: '1 1 300px' }} elevation={3}>
+    <Card
+      sx={{
+        width: 300,
+        m: 2,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+      }}
+      elevation={3}
+    >
       <CardContent>
         <Typography variant="h6">{title}</Typography>
         <Typography variant="body2" color="text.secondary">{description}</Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" href={link} target="_blank">Visit</Button>
+        <Button size="small" href={link} target="_blank" rel="noopener">
+          Visit
+        </Button>
       </CardActions>
     </Card>
   );

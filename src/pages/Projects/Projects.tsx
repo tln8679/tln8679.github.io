@@ -1,5 +1,5 @@
 import { Grid, Container } from '@mui/material';
-import { ProjectComponent } from '../components/ProjectComponent';
+import { ProjectComponent } from '../../components/ProjectComponent';
 
 export default function Projects() {
   const projects = [
@@ -22,9 +22,9 @@ export default function Projects() {
 
   return (
     <Container sx={{ mt: 4 }}>
-      <Grid container spacing={2} justifyContent="center">
+      <Grid container spacing={2} justifyContent="center" alignItems="stretch">
         {projects.map((p) => (
-          <Grid item key={p.title}>
+          <Grid item key={p.title} sx={{ flexGrow: 0 }}>
             <ProjectComponent {...p} />
           </Grid>
         ))}

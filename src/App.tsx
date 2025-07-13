@@ -4,7 +4,7 @@ import theme from "./theme";
 
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home/Home";
-import Projects from "./pages/Projects";
+import Projects from "./pages/Projects/Projects";
 
 function App() {
   return (
