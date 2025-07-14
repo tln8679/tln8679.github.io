@@ -11,7 +11,7 @@ export default function Projects() {
     {
       title: 'Furlancer',
       description: 'A place to learn about cats and dogs.',
-      link: 'https://tln8679.github.io/furlancer/'
+      link: 'https://furlancer.com'
     },
     {
       title: 'React Calculator',
