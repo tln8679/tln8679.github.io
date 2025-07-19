@@ -15,7 +15,7 @@ export default function Home() {
         {/* Profile Photo */}
         <Avatar
           alt="Taylor Noble"
-          src="/me.jpg"
+          src="/tnheadshot.png"
           sx={{ width: 150, height: 150 }}
           className="profile-avatar"
         />
