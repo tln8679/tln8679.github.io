@@ -1,5 +1,4 @@
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
-import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
@@ -8,11 +7,20 @@ export default function NavBar() {
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           Taylor Noble
         </Typography>
-        <Button color="inherit" component={Link} to="/">
+        <Button color="inherit" sx={{ ml: 2 }} href="#about">
           Home
         </Button>
-        <Button color="inherit" component={Link} to="/projects">
+        <Button color="inherit" sx={{ ml: 2 }} href="#projects">
           Projects
+        </Button>
+        <Button
+          color="inherit" 
+          sx={{ ml: 2 }}
+          href="https://www.linkedin.com/in/mrtaylornoble/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
         </Button>
       </Toolbar>
     </AppBar>

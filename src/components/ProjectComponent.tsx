@@ -10,11 +10,10 @@ export function ProjectComponent({ title, description, link }: ProjectProps) {
   return (
     <Card
       sx={{
-        width: 300,
-        m: 2,
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        minHeight: 155,
       }}
       elevation={3}
     >
