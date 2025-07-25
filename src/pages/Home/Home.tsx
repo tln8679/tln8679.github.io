@@ -22,6 +22,11 @@ export default function Home() {
       link: "https://furlancer.com",
     },
     {
+      title: "Taylor's Photos",
+      description: "Best photos from my gallery!",
+      link: "https://taylorsphotos.pages.dev/astro-photography-portfolio",
+    },
+    {
       title: "React Calculator",
       description: "A clean React‑TS calculator app.",
       link: "https://tln8679.github.io/my-react-caclculator/",
