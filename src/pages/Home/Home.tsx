@@ -12,9 +12,14 @@ import "./Home.css";
 export default function Home() {
   const projects = [
     {
-      title: "Retrospective Hub",
-      description: "Team retrospectives made easy.",
-      link: "http://retrospectivehub.com/",
+      title: "Noble Strength Log",
+      description: "No non-sense workout tracking.",
+      link: "https://noblestrengthlog.com/",
+    },
+    {
+      title: "Gone Quiet",
+      description: "The town went quiet a long time before Taylor noticed.",
+      link: "https://gonequiet.tln037.workers.dev/",
     },
     {
       title: "Furlancer",
@@ -30,6 +35,11 @@ export default function Home() {
       title: "React Calculator",
       description: "A clean React‑TS calculator app.",
       link: "https://tln8679.github.io/my-react-caclculator/",
+    },
+    {
+      title: "Retrospective Hub",
+      description: "Team retrospectives made easy.",
+      link: "http://retrospectivehub.com/",
     },
   ];
 

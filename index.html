@@ -6,7 +6,7 @@
   <title>Taylor Noble — Web Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -15,15 +15,19 @@
     }
 
     :root {
-      --bg: #0d0d0f;
-      --surface: #141417;
-      --surface-2: #1c1c21;
-      --border: rgba(255,255,255,0.07);
-      --text: #e8e6e0;
-      --text-muted: #7a7870;
-      --accent: #c9a96e;
-      --accent-dim: rgba(201,169,110,0.12);
-      --accent-glow: rgba(201,169,110,0.25);
+      --bg: #f5f5f7;
+      --surface: #ffffff;
+      --surface-2: #eef9f8;
+      --border: rgba(0,0,0,0.08);
+      --text: #1d1d1f;
+      --text-muted: #6e6e73;
+      --accent: #0f8f86;
+      --accent-bright: #7ae2db;
+      --accent-dim: rgba(122,226,219,0.16);
+      --accent-glow: rgba(122,226,219,0.4);
+      --heading-font: 'DM Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 1px 1px rgba(0,0,0,0.03);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.04);
     }
 
     html {
@@ -33,7 +37,7 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       font-weight: 300;
       line-height: 1.7;
       min-height: 100vh;
@@ -46,8 +50,8 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 20% 10%, rgba(201,169,110,0.04) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 80% 90%, rgba(100,120,180,0.03) 0%, transparent 60%);
+        radial-gradient(ellipse 80% 60% at 20% 8%, rgba(122,226,219,0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 85% 92%, rgba(122,226,219,0.08) 0%, transparent 60%);
       pointer-events: none;
       z-index: 0;
     }
@@ -63,19 +67,19 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.25rem 3rem;
-      background: rgba(13,13,15,0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(20px) saturate(1.6);
+      -webkit-backdrop-filter: blur(20px) saturate(1.6);
       border-bottom: 1px solid var(--border);
-      transition: padding 0.3s ease;
+      transition: padding 0.3s ease, box-shadow 0.3s ease;
     }
 
     .nav-logo {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--heading-font);
       font-size: 1.1rem;
-      font-weight: 400;
+      font-weight: 600;
       color: var(--text);
-      letter-spacing: 0.02em;
+      letter-spacing: -0.01em;
       text-decoration: none;
     }
 
@@ -165,11 +169,11 @@
     }
 
     h1 {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--heading-font);
       font-size: clamp(3rem, 6vw, 5.5rem);
       font-weight: 700;
       line-height: 1.05;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
       color: var(--text);
       margin-bottom: 0.5rem;
     }
@@ -197,38 +201,40 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.75rem 1.75rem;
+      padding: 0.85rem 1.9rem;
       font-family: 'DM Sans', sans-serif;
       font-size: 0.85rem;
       font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      letter-spacing: 0.02em;
       text-decoration: none;
-      border-radius: 2px;
+      border-radius: 980px;
       transition: all 0.25s ease;
       cursor: pointer;
     }
 
     .btn-primary {
       background: var(--accent);
-      color: #0d0d0f;
+      color: #ffffff;
       border: 1px solid var(--accent);
+      box-shadow: var(--shadow-sm);
     }
 
     .btn-primary:hover {
-      background: transparent;
-      color: var(--accent);
+      background: #0c766f;
+      border-color: #0c766f;
+      box-shadow: var(--shadow-md);
     }
 
     .btn-ghost {
       background: transparent;
-      color: var(--text-muted);
+      color: var(--text);
       border: 1px solid var(--border);
     }
 
     .btn-ghost:hover {
       border-color: var(--accent);
       color: var(--accent);
+      background: var(--accent-dim);
     }
 
     /* ─── AVATAR ─── */
@@ -263,7 +269,8 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--accent);
+      background: var(--accent-bright);
+      box-shadow: 0 0 10px var(--accent-glow);
     }
 
     @keyframes spin {
@@ -277,8 +284,9 @@
       border-radius: 50%;
       object-fit: cover;
       display: block;
-      border: 2px solid rgba(201,169,110,0.2);
+      border: 3px solid #ffffff;
       background: var(--surface-2);
+      box-shadow: 0 0 0 1px var(--accent-glow), var(--shadow-md);
     }
 
     /* Fallback initials if image fails */
@@ -287,11 +295,13 @@
       height: 100%;
       border-radius: 50%;
       background: var(--surface-2);
-      border: 2px solid rgba(201,169,110,0.2);
+      border: 3px solid #ffffff;
+      box-shadow: 0 0 0 1px var(--accent-glow), var(--shadow-md);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Playfair Display', serif;
+      font-family: var(--heading-font);
+      font-weight: 700;
       font-size: 4rem;
       color: var(--accent);
     }
@@ -343,11 +353,11 @@
     }
 
     h2 {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--heading-font);
       font-size: clamp(2rem, 4vw, 2.75rem);
-      font-weight: 400;
+      font-weight: 700;
       line-height: 1.2;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
     }
 
     /* ─── ABOUT ─── */
@@ -360,7 +370,7 @@
 
     .about-text p {
       font-size: 1.05rem;
-      color: #b5b3ae;
+      color: #48484d;
       line-height: 1.85;
     }
 
@@ -374,6 +384,9 @@
       gap: 1.5px;
       background: var(--border);
       border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
     }
 
     .stat {
@@ -387,7 +400,8 @@
     }
 
     .stat-number {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--heading-font);
+      font-weight: 700;
       font-size: 2.25rem;
       color: var(--accent);
       line-height: 1;
@@ -408,6 +422,9 @@
       gap: 1.5px;
       background: var(--border);
       border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
     }
 
     .project-card {
@@ -450,9 +467,9 @@
     }
 
     .project-name {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--heading-font);
       font-size: 1.2rem;
-      font-weight: 400;
+      font-weight: 600;
       color: var(--text);
     }
 
@@ -522,6 +539,8 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-6 { transition-delay: 0.6s; }
 
     /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
@@ -674,26 +693,35 @@
       <h2>Projects</h2>
     </div>
     <div class="projects-grid">
-      <div class="project-card reveal reveal-delay-1">
-        <div class="project-index">01</div>
-        <div class="project-name">Retrospective Hub</div>
-        <div class="project-desc">A streamlined tool for running team retrospectives. Built to make the agile process easier and more collaborative.</div>
-        <a href="http://retrospectivehub.com/" target="_blank" rel="noopener" class="project-link">
-          Visit Site
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H7M13 3v6"/></svg>
-        </a>
-      </div>
-      <div class="project-card reveal reveal-delay-2">
-        <div class="project-index">02</div>
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-index">14</div>
+          <div class="project-name">Noble Strength Log</div>
+          <div class="project-desc">No-nonsense workout tracking — log lifts and track progress without the bloat.</div>
+          <a href="https://noblestrengthlog.com/" target="_blank" rel="noopener" class="project-link">
+            Visit Site
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H7M13 3v6"/></svg>
+          </a>
+        </div>
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-index">02</div>
+          <div class="project-name">Gone Quiet</div>
+          <div class="project-desc">A Halloween browser game about a town that went quiet long before anyone noticed. Built with Phaser and TypeScript.</div>
+          <a href="https://gonequiet.tln037.workers.dev/" target="_blank" rel="noopener" class="project-link">
+            Visit Site
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H7M13 3v6"/></svg>
+          </a>
+        </div>
+      <div class="project-card reveal reveal-delay-3">
+        <div class="project-index">03</div>
         <div class="project-name">Furlancer</div>
-        <div class="project-desc">A resource hub for learning about cats and dogs. A passion project born from a love of animals and clean web design.</div>
+        <div class="project-desc">A resource hub for cat and dog lovers, built around clean design and a genuine love of animals.</div>
         <a href="https://furlancer.com" target="_blank" rel="noopener" class="project-link">
           Visit Site
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H7M13 3v6"/></svg>
         </a>
       </div>
-      <div class="project-card reveal reveal-delay-3">
-        <div class="project-index">03</div>
+      <div class="project-card reveal reveal-delay-4">
+        <div class="project-index">04</div>
         <div class="project-name">Taylor's Photos</div>
         <div class="project-desc">A curated photography gallery showcasing the best shots from my personal collection.</div>
         <a href="https://taylorsphotos.pages.dev/astro-photography-portfolio" target="_blank" rel="noopener" class="project-link">
@@ -701,11 +729,20 @@
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H7M13 3v6"/></svg>
         </a>
       </div>
-      <div class="project-card reveal reveal-delay-4">
-        <div class="project-index">04</div>
+      <div class="project-card reveal reveal-delay-5">
+        <div class="project-index">05</div>
         <div class="project-name">React Calculator</div>
         <div class="project-desc">A clean, fully functional calculator built with React and TypeScript. A study in precise UI and state management.</div>
         <a href="https://tln8679.github.io/my-react-caclculator/" target="_blank" rel="noopener" class="project-link">
+          Visit Site
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H7M13 3v6"/></svg>
+        </a>
+      </div>
+      <div class="project-card reveal reveal-delay-6">
+        <div class="project-index">06</div>
+        <div class="project-name">Retrospective Hub</div>
+        <div class="project-desc">A streamlined tool for running team retrospectives, built to make the agile process easier and more collaborative.</div>
+        <a href="http://retrospectivehub.com/" target="_blank" rel="noopener" class="project-link">
           Visit Site
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H7M13 3v6"/></svg>
         </a>
